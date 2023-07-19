@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary">#5CAD4A</color>
+    <color name="primaryVariant">#208D45</color>
+
+    <color name="secondary">#A7CB54</color>
+    <color name="secondaryVariant">#208D45</color>
+
+    <color name="light_gray">#E0E0E0</color>
+    <color name="alive">#416CDA31</color>
+    <color name="dead">#41F64232</color>
+    <color name="unknown">#41000000</color>
+
 </resources>

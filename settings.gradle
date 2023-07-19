@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MonumentosZaragoza"
 include ':app'
+include ':domain'
+include ':data'
+include ':usecases'
+include ':appTestShared'
+include ':testShared'
