@@ -18,10 +18,10 @@ class MonumentoDetailInfoView @JvmOverloads constructor(
     fun setMonumento(monumento: Monumento) = monumento.apply {
 
         text = buildSpannedString {
-
+            bold { append(context.getString(R.string.nombre)) }
+            appendLine(title)
             bold { append(context.getString(R.string.horario)) }
             appendLine(horario)
-
             bold { append(context.getString(R.string.price)) }
             appendLine(price)
             bold { append(context.getString(R.string.estilo)) }

@@ -28,7 +28,10 @@ fun <T> LifecycleOwner.launchAndCollect(
 }
 
 fun ImageView.loadUrl(url: String) {
-    Glide.with(context).load(url).into(this)
+    Glide.with(context)
+        .load(url)
+        .error(R.drawable.no_image_available)
+        .into(this)
 }
 fun Context.errorToString(error: MyError) = when (error) {
     MyError.Connectivity -> getString(R.string.connectivity_error)
