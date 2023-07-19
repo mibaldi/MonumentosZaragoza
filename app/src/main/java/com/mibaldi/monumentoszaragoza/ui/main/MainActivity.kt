@@ -25,7 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity(), OnMapReadyCallback,OnMapClickListener,OnInfoWindowClickListener{
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
-    private var googleMap: GoogleMap? = null
+    var googleMap: GoogleMap? = null
     private val markersMap: HashMap<Int, Marker?> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
