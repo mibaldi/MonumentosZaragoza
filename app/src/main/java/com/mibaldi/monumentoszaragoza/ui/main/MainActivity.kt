@@ -2,6 +2,7 @@ package com.mibaldi.monumentoszaragoza.ui.main
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -16,6 +17,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.mibaldi.monumentoszaragoza.R
 import com.mibaldi.monumentoszaragoza.databinding.ActivityMainBinding
+import com.mibaldi.monumentoszaragoza.ui.common.errorToString
 import com.mibaldi.monumentoszaragoza.ui.common.goToDetail
 import com.mibaldi.monumentoszaragoza.ui.common.launchAndCollect
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,7 +57,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback,OnMapClickListener,
             setOnMapClickListener(this@MainActivity)
             setOnInfoWindowClickListener(this@MainActivity)
             launchAndCollect(viewModel.state){
-                Log.d("ERROR",it.error.toString())
+                it.error?.let {
+                    Toast.makeText(this@MainActivity,this@MainActivity.errorToString(it),Toast.LENGTH_SHORT).show()
+                }
+
                 it.monumentos?.let {list ->
                     if (list.isNotEmpty()) {
                         list.first().geometry?.let {

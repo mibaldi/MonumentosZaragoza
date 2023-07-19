@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">MonumentosZaragoza</string>
+    <string name="app_name">Monumentos Zaragoza</string>
     <string name="google_maps_key">AIzaSyBXaj7vfawiHwbAnh3hMnxEtIjAja3BgoQ</string>
     <string name="monumento_detail_image">monumento_detail_image</string>
-    <string name="status" />
+    <string name="status">"Estatus: "</string>
     <string name="description">Description: </string>
-    <string name="horario">Horario: </string>
-    <string name="price">Price: </string>
-    <string name="estilo">Estilo: </string>
-    <string name="address">Address: </string>
+    <string name="horario">"Horario: "</string>
+    <string name="price">"Precio: "</string>
+    <string name="estilo">"Estilo: "</string>
+    <string name="address">"Dirección: "</string>
     <string name="connectivity_error">connectivity_error</string>
     <string name="server_error">server_error</string>
     <string name="unknown_error">unknown_error</string>

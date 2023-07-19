@@ -1,6 +1,7 @@
 package com.mibaldi.monumentoszaragoza.ui.detail
 
 import android.content.Context
+import android.text.Html
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.text.bold
@@ -18,17 +19,26 @@ class MonumentoDetailInfoView @JvmOverloads constructor(
     fun setMonumento(monumento: Monumento) = monumento.apply {
 
         text = buildSpannedString {
-            bold { append(context.getString(R.string.nombre)) }
-            appendLine(title)
-            bold { append(context.getString(R.string.horario)) }
-            appendLine(horario)
-            bold { append(context.getString(R.string.price)) }
-            appendLine(price)
-            bold { append(context.getString(R.string.estilo)) }
-            appendLine(estilo)
-            bold { append(context.getString(R.string.address)) }
-            appendLine(address)
-
+            if (title.isNotEmpty()){
+                bold { append(context.getString(R.string.nombre)) }
+                appendLine(Html.fromHtml(title, Html.FROM_HTML_MODE_COMPACT))
+            }
+            if (horario.isNotEmpty()){
+                bold { append(context.getString(R.string.horario)) }
+                appendLine(Html.fromHtml(horario, Html.FROM_HTML_MODE_COMPACT))
+            }
+            if (price.isNotEmpty()){
+                bold { append(context.getString(R.string.price)) }
+                appendLine(Html.fromHtml(price, Html.FROM_HTML_MODE_COMPACT))
+            }
+            if (estilo.isNotEmpty()){
+                bold { append(context.getString(R.string.estilo)) }
+                appendLine(Html.fromHtml(estilo, Html.FROM_HTML_MODE_COMPACT))
+            }
+            if (address.isNotEmpty()){
+                bold { append(context.getString(R.string.address)) }
+                appendLine(Html.fromHtml(address, Html.FROM_HTML_MODE_COMPACT))
+            }
         }
     }
 }
