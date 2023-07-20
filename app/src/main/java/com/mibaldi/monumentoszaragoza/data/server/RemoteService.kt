@@ -5,7 +5,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RemoteService {
-
     @GET("monumento.json?fl=id,title,geometry&srsname=wgs84")
     suspend fun getMonumentos(@Query("point")point: String,@Query("distance")distance: String = "250"): RemoteResult
     @GET("monumento/{id}")

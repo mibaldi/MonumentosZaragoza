@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback,OnMapClickListener,
             setOnInfoWindowClickListener(this@MainActivity)
             launchAndCollect(viewModel.state){
                 it.error?.let {
-                    Toast.makeText(this@MainActivity,this@MainActivity.errorToString(it),Toast.LENGTH_SHORT).show()
+                    binding.error = this@MainActivity.errorToString(it)
                 }
 
                 it.monumentos?.let {list ->
